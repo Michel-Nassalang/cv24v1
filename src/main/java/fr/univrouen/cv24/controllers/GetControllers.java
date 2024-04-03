@@ -33,7 +33,14 @@ public class GetControllers {
 	@GetMapping("/testfic")
 	public ResponseEntity<String> testFichier() {
 	    Fichier fichier = new Fichier();
-	    String contenuFichier = fichier.loadFileXML();
+	    String contenuFichier = fichier.loadFileXMLSmallCv();
+	    return ResponseEntity.ok(contenuFichier);
+	}
+	
+	@GetMapping("/testcv")
+	public ResponseEntity<String> testFichierCv24() {
+	    Fichier fichier = new Fichier();
+	    String contenuFichier = fichier.loadFileXMLCv24();
 	    return ResponseEntity.ok(contenuFichier);
 	}
 	
